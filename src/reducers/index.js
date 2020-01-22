@@ -1,10 +1,14 @@
-import { combineReducers } from 'redux'
-import todos from './todos'
-import visibilityFilter from './visibilityFilter'
+import { combineReducers } from "redux";
+import workLength from "./workLength";
+import breakLength from "./breakLength";
+import timerState from "./timerState";
+import secondsLeft from "./secondsLeft";
+import currentSession from "./currentSession";
 
-const todoApp = combineReducers({
-  todos,
-  visibilityFilter
-})
-
-export default todoApp
+export default combineReducers({
+  workLength,
+  breakLength,
+  timerState,
+  secondsLeft,
+  currentSession
+});
