@@ -9,13 +9,185 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   </head>
-  <body>
-    <div class="container">
-      <h1 class="mt-4">Pomodoro clock</h1>
-      <hr />
-      <audio id="beep" src="https://goo.gl/65cBl1"></audio>
 
-      <div id="root" class="mt-4"></div>
+  <body class="bg-dark">
+    <!-- Beep sound -->
+    <audio id="beep" src="https://goo.gl/65cBl1"></audio>
+
+    <!-- App -->
+    <div id="root" class="my-5 mx-auto text-center"></div>
+
+    <!-- Explanation -->
+    <div class="container text-light mb-5">
+      <h1>Pomodoro clock</h1>
+
+      <p>
+        I created this in fulfillment of
+        <a href="https://freecodecamp.org">freeCodeCamp</a>'s Front End
+        Libraries Project
+        <a
+          href="https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-pomodoro-clock"
+          >Build a Pomodoro Clock</a
+        >, using <a href="https://redux.js.org/">Redux</a>,
+        <a href="https://reactjs.org/">React</a>,
+        <a href="https://react-redux.js.org/">React Redux</a>,
+        <a href="https://getbootstrap.com/">Bootstrap</a>,
+        <a href="https://react-bootstrap.netlify.com/">React Bootstrap</a>,
+        <a href="https://github.com/FortAwesome/react-fontawesome"
+          >react-fontawesome</a
+        >, and the alarm beeping noise used in
+        <a href="https://codepen.io/freeCodeCamp/pen/XpKrrW?editors=0010"
+          >freeCodeCamp's example</a
+        >. It fulfills the following user stories:
+      </p>
+
+      <ol>
+        <li>
+          I can see an element with <code>id="break-label"</code> that contains
+          a string (e.g. "Break Length").
+        </li>
+        <li>
+          I can see an element with <code>id="session-label"</code> that
+          contains a string (e.g. "Session Length").
+        </li>
+        <li>
+          I can see two clickable elements with corresponding IDs:
+          <code>id="break-decrement"</code> and
+          <code>id="session-decrement"</code>.
+        </li>
+        <li>
+          I can see two clickable elements with corresponding IDs:
+          <code>id="break-increment"</code> and
+          <code>id="session-increment"</code>.
+        </li>
+        <li>
+          I can see an element with a corresponding
+          <code>id="break-length"</code>, which by default (on load) displays a
+          value of 5.
+        </li>
+        <li>
+          I can see an element with a corresponding
+          <code>id="session-length"</code>, which by default displays a value of
+          25.
+        </li>
+        <li>
+          I can see an element with a corresponding
+          <code>id="timer-label"</code>, that contains a string indicating a
+          session is initialized (e.g. "Session").
+        </li>
+        <li>
+          I can see an element with corresponding <code>id="time-left"</code>.
+          NOTE: Paused or running, the value in this field should always be
+          displayed in <code>mm:ss</code> format (i.e. 25:00).
+        </li>
+        <li>
+          I can see a clickable element with a corresponding
+          <code>id="start_stop"</code>.
+        </li>
+        <li>
+          I can see a clickable element with a corresponding
+          <code>id="reset"</code>.
+        </li>
+        <li>
+          When I click the element with the id of <code>reset</code>, any
+          running timer should be stopped, the value within
+          <code>id="break-length"</code> should return to <code>5</code>, the
+          value within <code>id="session-length"</code> should return to 25, and
+          the element with <code>id="time-left"</code> should reset to it's
+          default state.
+        </li>
+        <li>
+          When I click the element with the id of <code>break-decrement</code>,
+          the value within <code>id="break-length"</code> decrements by a value
+          of 1, and I can see the updated value.
+        </li>
+        <li>
+          When I click the element with the id of <code>break-increment</code>,
+          the value within <code>id="break-length"</code> increments by a value
+          of 1, and I can see the updated value.
+        </li>
+        <li>
+          When I click the element with the id of
+          <code>session-decrement</code>, the value within
+          <code>id="session-length"</code> decrements by a value of 1, and I can
+          see the updated value.
+        </li>
+        <li>
+          When I click the element with the id of
+          <code>session-increment</code>, the value within
+          <code>id="session-length"</code> increments by a value of 1, and I can
+          see the updated value.
+        </li>
+        <li>
+          I should not be able to set a session or break length to <= 0.
+        </li>
+        <li>
+          I should not be able to set a session or break length to > 60.
+        </li>
+        <li>
+          When I first click the element with <code>id="start_stop"</code>, the
+          timer should begin running from the value currently displayed in
+          <code>id="session-length"</code>, even if the value has been
+          incremented or decremented from the original value of 25.
+        </li>
+        <li>
+          User Story #19: If the timer is running, the element with the id of
+          <code>time-left</code> should display the remaining time in
+          <code>mm:ss</code> format (decrementing by a value of 1 and updating
+          the display every 1000ms).
+        </li>
+        <li>
+          If the timer is running and I click the element with
+          <code>id="start_stop"</code>, the countdown should pause.
+        </li>
+        <li>
+          If the timer is paused and I click the element with
+          <code>id="start_stop"</code>, the countdown should resume running from
+          the point at which it was paused.
+        </li>
+        <li>
+          When a session countdown reaches zero (NOTE: timer MUST reach 00:00),
+          and a new countdown begins, the element with the id of
+          <code>timer-label</code>
+          should display a string indicating a break has begun.
+        </li>
+        <li>
+          When a session countdown reaches zero (NOTE: timer MUST reach 00:00),
+          a new break countdown should begin, counting down from the value
+          currently displayed in the <code>id="break-length"</code> element.
+        </li>
+        <li>
+          When a break countdown reaches zero (NOTE: timer MUST reach 00:00),
+          and a new countdown begins, the element with the id of
+          <code>timer-label</code>
+          should display a string indicating a session has begun.
+        </li>
+        <li>
+          When a break countdown reaches zero (NOTE: timer MUST reach 00:00), a
+          new session countdown should begin, counting down from the value
+          currently displayed in the <code>id="session-length"</code> element.
+        </li>
+        <li>
+          When a countdown reaches zero (NOTE: timer MUST reach 00:00), a sound
+          indicating that time is up should play. This should utilize an HTML5
+          <code>audio</code> tag and have a corresponding
+          <code>id="beep"</code>.
+        </li>
+        <li>
+          The audio element with <code>id="beep"</code> must be 1 second or
+          longer.
+        </li>
+        <li>
+          The audio element with id of <code>beep</code> must stop playing and
+          be rewound to the beginning when the element with the id of
+          <code>reset</code> is clicked.
+        </li>
+      </ol>
+
+      <p>
+        I decided to also give it the feature of typeable inputs for the session
+        length settings.
+      </p>
     </div>
   </body>
 </html>

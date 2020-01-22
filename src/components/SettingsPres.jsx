@@ -13,7 +13,7 @@ export default ({
   decBreakLength,
   setBreakLength
 }) => (
-  <Card.Body className="border-top pb-2">
+  <Card.Body className="text-left border-top pb-2">
     <div className="h4">Settings</div>
     <Setting
       session="Work"
