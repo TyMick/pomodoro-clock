@@ -10,7 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
   </head>
 
-  <body class="bg-dark">
+  <body style="background-color: #dee2e6;">
     <!-- Beep sound -->
     <audio id="beep" src="https://goo.gl/65cBl1"></audio>
 
@@ -18,7 +18,13 @@
     <div id="root" class="my-5 mx-auto text-center"></div>
 
     <!-- Explanation -->
-    <div class="container text-light mb-5">
+    <div class="container mb-5">
+      <p class="lead font-italic">
+        View this app's source on
+        <a href="https://github.com/tywmick/pomodoro-clock">GitHub</a> or
+        <a href="https://glitch.com/edit/#!/ty-pomodoro-clock">Glitch</a>.
+      </p>
+
       <h1>Pomodoro clock</h1>
 
       <p>
@@ -189,5 +195,11 @@
         length settings.
       </p>
     </div>
+
+    <div
+      class="glitchButton"
+      style="position:absolute;top:20px;right:20px;"
+    ></div>
+    <script src="https://button.glitch.me/button.js"></script>
   </body>
 </html>
