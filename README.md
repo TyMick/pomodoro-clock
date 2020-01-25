@@ -1,5 +1,7 @@
 # Pomodoro clock
 
+Not pretty, but the design's functional. The application logic is the fun part, anyway, and it's where my talents are better directed.
+
 I created this app in fulfillment of [freeCodeCamp](https://freecodecamp.org)'s Front End Libraries Project [Build a Pomodoro Clock](https://learn.freecodecamp.org/front-end-libraries/front-end-libraries-projects/build-a-pomodoro-clock), using [Redux](https://redux.js.org/), [React](https://reactjs.org/), [React Redux](https://react-redux.js.org/), [Bootstrap](https://getbootstrap.com/), [React Bootstrap](https://react-bootstrap.netlify.com/), [react-fontawesome](https://github.com/FortAwesome/react-fontawesome), and the alarm beeping noise used in [freeCodeCamp's example](https://codepen.io/freeCodeCamp/pen/XpKrrW?editors=0010). It fulfills the following user stories:
 
 1.  I can see an element with `id="break-label"` that contains a string (e.g. "Break Length").
